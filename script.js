@@ -250,7 +250,7 @@ try {
   const keyData = await keyRes.json();
   GEMINI_API_KEY = keyData.key;
 } catch (e) {
-  GEMINI_API_KEY = "AIzaSyA19U-CUQ_W0SRzh7vQgOy4pZzStoKbQMo";
+  GEMINI_API_KEY = "";
 }
 
     try {
