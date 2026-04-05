@@ -237,12 +237,15 @@ function loadQuestion() {
     progressText.textContent = `Question ${appState.currentQuestionIndex + 1} of ${appState.sessionQuestions.length}`;
     questionText.textContent = appState.sessionQuestions[appState.currentQuestionIndex];
 }
-if (analyzeBtn) {
-  analyzeBtn.addEventListener('click', async () => {
+analyzeBtn.addEventListener('click', async () => {
     analyzeBtn.disabled = true;
     analyzeBtn.innerText = "Analyzing...";
     analyzeBtn.style.opacity = "0.6";
     analyzeBtn.style.cursor = "not-allowed";
+
+    const keyRes = await fetch('/api/getkey');
+    const keyData = await keyRes.json();
+    const GEMINI_API_KEY = keyData.key;
 
     try {
       const response = await fetch(
