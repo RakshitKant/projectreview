@@ -405,9 +405,9 @@ function finishSession() {
       cell.className = "day" + (Math.random() > 0.7 ? ` level-${Math.floor(Math.random() * 4)+1}` : "");
       heatmap.appendChild(cell);
     }
-    ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"].forEach((m, i) => {
+ ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"].forEach((m, i) => {
       let div = document.createElement("div"); div.textContent = m;
       div.style.gridColumn = Math.floor(i * 4.3) + 1; monthsDiv.appendChild(div);
     });
-  
+  }
 };
