@@ -244,9 +244,14 @@ analyzeBtn.addEventListener('click', async () => {
     analyzeBtn.style.opacity = "0.6";
     analyzeBtn.style.cursor = "not-allowed";
 
-    const keyRes = await fetch('/api/getkey');
-    const keyData = await keyRes.json();
-    const GEMINI_API_KEY = keyData.key;
+    let GEMINI_API_KEY;
+try {
+  const keyRes = await fetch('/api/getkey');
+  const keyData = await keyRes.json();
+  GEMINI_API_KEY = keyData.key;
+} catch (e) {
+  GEMINI_API_KEY = "AIzaSyA19U-CUQ_W0SRzh7vQgOy4pZzStoKbQMo";
+}
 
     try {
       const response = await fetch(
