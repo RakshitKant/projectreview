@@ -409,5 +409,5 @@ function finishSession() {
       let div = document.createElement("div"); div.textContent = m;
       div.style.gridColumn = Math.floor(i * 4.3) + 1; monthsDiv.appendChild(div);
     });
-  }
+  
 };
