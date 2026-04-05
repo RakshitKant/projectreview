@@ -237,6 +237,7 @@ function loadQuestion() {
     progressText.textContent = `Question ${appState.currentQuestionIndex + 1} of ${appState.sessionQuestions.length}`;
     questionText.textContent = appState.sessionQuestions[appState.currentQuestionIndex];
 }
+  if (analyzeBtn) {
 analyzeBtn.addEventListener('click', async () => {
     analyzeBtn.disabled = true;
     analyzeBtn.innerText = "Analyzing...";
