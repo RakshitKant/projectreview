@@ -1,4 +1,4 @@
-const GEMINI_API_KEY = "";
+
 let performanceChartInstance = null;
 let questionsDB = {};
 
